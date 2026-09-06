@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — sourced from the Figma file (fileKey 20GKGVAFmt5Y902ZOeIpS5, node 15:2).
+ * Tailwind v4 reads custom theme values straight from this @theme block, so these
+ * map 1:1 onto utilities like `bg-cream`, `text-ink`, `border-hairline`, `rounded-card`, etc.
+ */
+@theme {
+  /* surfaces */
+  --color-cream: #fbf9f3;
+  --color-cream-translucent: rgba(251, 249, 243, 0.9);
+  --color-band: #e4e3da;
+  --color-band-soft: #eae8e2;
+  --color-surface-muted: #f0eee8;
+  --color-card: #ffffff;
+
+  /* text */
+  --color-ink: #1b1c18;
+  --color-body: #5f5f58;
+  --color-label: #454840;
+
+  /* accent */
+  --color-sage: #6b7a5e;
+  --color-sage-dark: #536147;
+
+  /* borders */
+  --color-hairline: #c5c8bd;
+  --color-hairline-soft: rgba(197, 200, 189, 0.6);
+
+  /* radii */
+  --radius-card: 4px;
+  --radius-control: 12px;
+
+  /* fonts (wired to next/font variables in layout.tsx) */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* layout */
+  --container-page: 1280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* The source design has no dark frame. We keep the editorial cream palette
+     fixed rather than inverting it, since an auto-inverted "dark mode" was not
+     part of the Figma file and would misrepresent the design. */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-sage);
+  color: var(--color-cream);
+}
+
+/* Desktop-only affordances: custom cursor hides the native one; touch devices
+   never load the cursor component, so this stays scoped with a hover/pointer guard. */
+@media (hover: hover) and (pointer: fine) {
+  body[data-custom-cursor="true"] {
+    cursor: none;
+  }
+  body[data-custom-cursor="true"] a,
+  body[data-custom-cursor="true"] button {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Contact CTA heading: one-shot gradient sweep on load, see ContactCta.tsx */
+@keyframes gradient-sweep {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.gradient-sweep-text {
+  background-image: linear-gradient(90deg, var(--color-ink) 30%, var(--color-sage) 50%, var(--color-ink) 70%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-sweep 2.2s ease-out 0.2s 1 both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gradient-sweep-text {
+    animation: none;
+    background: none;
+    color: var(--color-ink);
+  }
+}
+
+/* Grain overlay: desktop-only tactile texture, see GrainOverlay.tsx */
+.grain-overlay {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .grain-overlay {
+    display: block;
+  }
+}
