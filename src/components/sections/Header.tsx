@@ -54,7 +54,8 @@ export function Header() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
-            className="flex size-9 items-center justify-center text-primary lg:hidden"
+            className="flex size-9 items-center justify-center rounded-full text-primary transition-colors lg:hidden data-[open=true]:bg-primary data-[open=true]:text-background"
+            data-open={mobileOpen}
           >
             <MenuToggleIcon open={mobileOpen} className="size-5" />
           </button>
