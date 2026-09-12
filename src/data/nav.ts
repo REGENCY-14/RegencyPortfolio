@@ -4,14 +4,15 @@ export interface NavLink {
 }
 
 /**
- * The reference site's nav reads Home / About / Work / Blog / Contact.
- * "Blog" is dropped here: this brief explicitly says to omit the
+ * Custom labels (Journey/Projects/Hire Me instead of the more generic
+ * About/Work/Contact) over the same anchors as the Mission, Work, and
+ * Contact sections. No "Blog" link: this brief says to omit the
  * writing/notes section rather than fabricate posts, and a nav link with
  * nothing behind it would be worse than not having it.
  */
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "#top" },
-  { label: "About", href: "#mission" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Journey", href: "#mission" },
+  { label: "Projects", href: "#work" },
+  { label: "Hire Me", href: "#contact" },
 ];
