@@ -4,7 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { LogoMark } from "@/components/icons/LogoMark";
+import { MenuToggleIcon } from "@/components/icons/MenuToggleIcon";
 import { ThemeToggle } from "@/components/motion/ThemeToggle";
+import { MobileMenuOverlay } from "@/components/motion/MobileMenuOverlay";
 import { NAV_LINKS } from "@/data/nav";
 
 /**
@@ -52,32 +54,15 @@ export function Header() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
-            className="flex size-9 items-center justify-center text-primary lg:hidden"
+            className="flex size-9 items-center justify-center rounded-full text-primary transition-colors lg:hidden data-[open=true]:bg-primary data-[open=true]:text-background"
+            data-open={mobileOpen}
           >
-            <svg viewBox="0 0 20 20" fill="none" className="size-5" aria-hidden>
-              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
+            <MenuToggleIcon open={mobileOpen} className="size-5" />
           </button>
         </div>
       </div>
 
-      {mobileOpen && (
-        <nav
-          className="flex flex-col gap-1 border-t border-hairline bg-background px-4 py-4 lg:hidden"
-          aria-label="Mobile primary"
-        >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="rounded-full px-3 py-2 text-sm text-muted hover:bg-primary/5 hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      )}
+      <MobileMenuOverlay open={mobileOpen} onClose={() => setMobileOpen(false)} links={NAV_LINKS} />
     </header>
   );
 }
