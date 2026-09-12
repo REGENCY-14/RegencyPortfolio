@@ -25,9 +25,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const FOOTER_NAV = [
   { label: "Home", href: "#top" },
-  { label: "About", href: "#mission" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Journey", href: "#mission" },
+  { label: "Projects", href: "#work" },
+  { label: "Hire Me", href: "#contact" },
 ];
 
 export const CONTACT_EMAIL = "hello@osmanzakaria.dev";
