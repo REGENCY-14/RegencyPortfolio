@@ -17,14 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Elena Vance — Frontend Development, QA & Test Automation, AI Agents",
+  title: "Osman Zakaria — Frontend Development, QA & Test Automation, AI Agents",
   description:
     "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
   icons: {
     icon: "/icon.svg",
   },
   openGraph: {
-    title: "Elena Vance — Frontend Development, QA & Test Automation, AI Agents",
+    title: "Osman Zakaria — Frontend Development, QA & Test Automation, AI Agents",
     description:
       "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
     type: "website",
