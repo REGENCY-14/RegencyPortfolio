@@ -1,27 +1,9 @@
-import { Header } from "@/components/sections/Header";
-import { Hero } from "@/components/sections/Hero";
-import { FeaturedWork } from "@/components/sections/FeaturedWork";
-import { Specializations } from "@/components/sections/Specializations";
-import { Stats } from "@/components/sections/Stats";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Process } from "@/components/sections/Process";
-import { ContactCta } from "@/components/sections/ContactCta";
-import { Footer } from "@/components/sections/Footer";
-
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <FeaturedWork />
-        <Specializations />
-        <Stats />
-        <Testimonials />
-        <Process />
-        <ContactCta />
-      </main>
-      <Footer />
-    </>
+    <main className="flex flex-1 items-center justify-center px-4 py-32 text-center">
+      <p className="text-sm uppercase tracking-[0.2em] text-muted">
+        Rebuild in progress — sections land one branch at a time.
+      </p>
+    </main>
   );
 }
