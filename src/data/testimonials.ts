@@ -12,17 +12,17 @@ export interface Testimonial {
  */
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: "Placeholder testimonial — replace with a real client quote before this site goes live.",
+    quote: "Placeholder testimonial. Replace with a real client quote before this site goes live.",
     name: "Placeholder Name",
     role: "Placeholder Role, Company",
   },
   {
-    quote: "Placeholder testimonial — replace with a real client quote before this site goes live.",
+    quote: "Placeholder testimonial. Replace with a real client quote before this site goes live.",
     name: "Placeholder Name",
     role: "Placeholder Role, Company",
   },
   {
-    quote: "Placeholder testimonial — replace with a real client quote before this site goes live.",
+    quote: "Placeholder testimonial. Replace with a real client quote before this site goes live.",
     name: "Placeholder Name",
     role: "Placeholder Role, Company",
   },

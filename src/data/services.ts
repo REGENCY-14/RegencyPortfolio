@@ -27,13 +27,13 @@ export const SERVICES: Service[] = [
   {
     title: "AI Agent Building",
     description:
-      "Tool-calling agents for triage, self-healing tests, and code review — built to hand off real work, not just demo well.",
+      "Tool-calling agents for triage, self-healing tests, and code review, built to hand off real work, not just demo well.",
     icon: AiAgentIcon,
   },
   {
     title: "Delivery & QA Coaching",
     description:
-      "Working alongside engineering teams to raise the testing bar and tighten delivery cadence — knowledge transfer, not just a handoff.",
+      "Working alongside engineering teams to raise the testing bar and tighten delivery cadence: knowledge transfer, not just a handoff.",
     icon: DeliveryIcon,
   },
 ];

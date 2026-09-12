@@ -43,7 +43,7 @@ export function FooterCta() {
               <span className="font-display text-lg">Osman Zakaria</span>
             </Link>
             <p className="max-w-xs text-sm text-muted">
-              Frontend development, QA &amp; test automation, and AI agent building — one
+              Frontend development, QA &amp; test automation, and AI agent building, one
               practice.
             </p>
             <div className="flex items-center gap-4">
@@ -72,7 +72,7 @@ export function FooterCta() {
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-primary">
               {CONTACT_EMAIL}
             </a>
-            <span>Remote — worldwide</span>
+            <span>Remote, worldwide</span>
           </div>
         </div>
 

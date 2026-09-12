@@ -70,7 +70,7 @@ export function Hero() {
           className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
         >
           I design and ship frontend systems, build the Playwright suites that guard them, and
-          the AI agents that keep both moving — for teams who refuse to choose between fast and
+          the AI agents that keep both moving, for teams who refuse to choose between fast and
           reliable.
         </motion.p>
 

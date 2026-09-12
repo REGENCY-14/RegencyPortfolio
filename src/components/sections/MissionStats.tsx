@@ -51,7 +51,7 @@ export function MissionStats() {
         <div>
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">Mission</p>
           <p className="font-display text-2xl leading-relaxed tracking-[-0.01em] sm:text-3xl">
-            I believe good software is built the same way it&apos;s tested — deliberately, with
+            I believe good software is built the same way it&apos;s tested: deliberately, with
             evidence, and without shortcuts that come due later. That&apos;s the thread through
             every interface I ship, every suite I write, and every agent I build to keep both
             honest.
