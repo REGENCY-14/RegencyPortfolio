@@ -6,6 +6,7 @@ import { MissionStats } from "@/components/sections/MissionStats";
 import { WorkCarousel } from "@/components/sections/WorkCarousel";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { EngagementOptions } from "@/components/sections/EngagementOptions";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <WorkCarousel />
         <TestimonialCarousel />
         <ProcessSteps />
+        <EngagementOptions />
       </main>
     </>
   );
