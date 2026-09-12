@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { NumberedLabel } from "@/components/ui/NumberedLabel";
 import { CarouselArrows } from "@/components/ui/CarouselArrows";
@@ -9,11 +10,16 @@ import { SERVICES } from "@/data/services";
 import { cn } from "@/lib/cn";
 
 /**
- * Desktop: a numbered accordion list on the left, one row open at a time,
- * with its icon shown large in a cross-fading panel on the right. Mobile:
- * a simple stacked list per row (per the brief, dropping the floating
- * hover-image effect and the accordion interaction — a small static icon
- * sits next to each row's copy instead).
+ * Desktop: a numbered accordion list on the left, its photo shown large in
+ * a cross-fading panel on the right (icon overlaid as a small badge,
+ * bottom-left, carrying the existing stroke-draw-in). The four source
+ * photos come from different shoots with different color casts, so each
+ * is desaturated + given a warm duotone wash — via the amber-tinted
+ * overlay div, not a color filter that would need a separate asset per
+ * theme — to read as one system instead of four clashing stock photos.
+ * Mobile: a simple stacked list per row (per the brief, dropping the
+ * floating hover-image effect and the accordion interaction — a small
+ * static icon sits next to each row's copy instead).
  */
 export function ServicesAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -83,7 +89,7 @@ export function ServicesAccordion() {
             <CarouselArrows onPrev={goPrev} onNext={goNext} className="mt-8" prevLabel="Previous service" nextLabel="Next service" />
           </div>
 
-          <div className="flex items-center justify-center rounded-card bg-surface">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-surface">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -92,9 +98,21 @@ export function ServicesAccordion() {
                 exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 onAnimationComplete={() => setDrawnIndices((prev) => new Set(prev).add(activeIndex))}
-                className="flex size-48 items-center justify-center text-primary"
+                className="absolute inset-0"
               >
-                <ActiveIcon size={96} shouldDraw={shouldDraw} />
+                <Image
+                  src={SERVICES[activeIndex].image}
+                  alt={SERVICES[activeIndex].imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                  className="object-cover grayscale contrast-125"
+                  priority={activeIndex === 0}
+                />
+                <div className="absolute inset-0 bg-accent-glow/25 mix-blend-color" aria-hidden />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" aria-hidden />
+                <span className="absolute bottom-4 left-4 flex size-14 items-center justify-center rounded-full border border-hairline bg-background/90 text-primary backdrop-blur-sm">
+                  <ActiveIcon size={28} shouldDraw={shouldDraw} />
+                </span>
               </motion.div>
             </AnimatePresence>
           </div>
