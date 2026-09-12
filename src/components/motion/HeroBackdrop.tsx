@@ -21,7 +21,7 @@ export function HeroBackdrop() {
         className="absolute inset-y-0 -inset-x-4"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, rgba(245,244,241,0.05) 0px, rgba(245,244,241,0.05) 1px, transparent 1px, transparent 28px)",
+            "repeating-linear-gradient(90deg, rgba(var(--color-stripe), 0.05) 0px, rgba(var(--color-stripe), 0.05) 1px, transparent 1px, transparent 28px)",
         }}
         animate={prefersReducedMotion ? undefined : { x: [0, 14, 0] }}
         transition={
