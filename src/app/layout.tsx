@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-primary">
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} antialiased`}>
+      <body className="min-h-screen flex flex-col bg-background text-primary">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
