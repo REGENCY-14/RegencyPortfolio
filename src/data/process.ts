@@ -18,7 +18,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
   {
     title: "Build & Test",
-    description: "Ship the interface and the Playwright suite that guards it side by side — never one without the other.",
+    description: "Ship the interface and the Playwright suite that guards it side by side, never one without the other.",
     icon: BuildIcon,
   },
   {

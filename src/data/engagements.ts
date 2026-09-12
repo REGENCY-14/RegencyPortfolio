@@ -35,7 +35,7 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     id: "ai",
     title: "AI Agent Tooling Project",
-    description: "A tool-calling agent scoped to one real workflow — bug triage, test healing, or code review.",
+    description: "A tool-calling agent scoped to one real workflow: bug triage, test healing, or code review.",
     features: [
       "Scoped to a single, measurable workflow",
       "Built on your existing tools, not a new platform",
