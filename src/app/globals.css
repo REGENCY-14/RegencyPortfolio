@@ -8,7 +8,7 @@
  * `text-muted`, `text-accent-glow`, `rounded-card`, etc.
  */
 @theme {
-  /* surfaces */
+  /* surfaces (dark — the default theme) */
   --color-background: #0a0a0a;
   --color-surface: #141414;
   --color-hairline: #232323;
@@ -31,6 +31,45 @@
   --container-page: 1280px;
 }
 
+/* Dark-theme-only tokens that aren't part of the @theme block above
+   (they don't need their own Tailwind utilities, just to exist as CSS
+   variables — the chrome CTA gradient and HeroBackdrop's stripe color). */
+:root {
+  --color-chrome-from: #efefef;
+  --color-chrome-to: #c7c7c7;
+  --color-chrome-text: #0a0a0a;
+  --color-stripe: 245, 244, 241;
+}
+
+/*
+ * Light theme — same near-monochrome restraint, inverted. Applied via
+ * `data-theme="light"` on <html> (see ThemeToggle.tsx / the anti-FOUC
+ * script in layout.tsx), overriding the @theme values above at runtime
+ * so every `bg-background`/`text-primary`/etc. utility site-wide just
+ * repaints — nothing else has to know a theme exists.
+ */
+:root[data-theme="light"] {
+  --color-background: #faf9f7;
+  --color-surface: #f0efec;
+  --color-hairline: #dedcd7;
+  --color-primary: #14140f;
+  --color-muted: #5f5e58;
+
+  /* Deepened slightly so the glow still reads as warm accent rather than
+     a wash on a light background. */
+  --color-accent-glow: #b8642c;
+
+  /* The chrome CTA needs to invert too, so it keeps popping against
+     whichever background is behind it — see the .btn-chrome rule below. */
+  --color-chrome-from: #2a2a26;
+  --color-chrome-to: #0a0a0a;
+  --color-chrome-text: #faf9f7;
+
+  /* HeroBackdrop's fluted stripe texture — a light stripe reads on dark,
+     a dark stripe on light. */
+  --color-stripe: 20, 20, 15;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -50,6 +89,7 @@ body {
   background: var(--color-background);
   color: var(--color-primary);
   font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -60,14 +100,46 @@ body {
 /* Glossy chrome pill CTA — the one non-monochrome, non-glow surface. Kept as
    a plain CSS gradient (not a Tailwind color token, since it's a two-stop
    gradient, not a flat color) so every CTA button shares the exact same
-   sheen instead of each component rolling its own. */
+   sheen instead of each component rolling its own. Inverts per theme (see
+   --color-chrome-* above) so it keeps popping against either background. */
 .btn-chrome {
-  background: linear-gradient(180deg, #efefef 0%, #c7c7c7 100%);
-  color: #0a0a0a;
+  background: linear-gradient(180deg, var(--color-chrome-from) 0%, var(--color-chrome-to) 100%);
+  color: var(--color-chrome-text);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  body {
+    transition: none;
+  }
+}
+
+/* ThemeToggle's sun/moon crossfade — pure CSS, keyed off data-theme on
+   <html>, so the two icons stay in sync with no JS state at all (see
+   ThemeToggle.tsx). */
+.theme-icon {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+.theme-icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+:root[data-theme="light"] .theme-icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+:root[data-theme="light"] .theme-icon-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-icon {
+    transition: none;
   }
 }

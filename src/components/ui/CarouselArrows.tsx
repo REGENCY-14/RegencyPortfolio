@@ -28,7 +28,7 @@ export function CarouselArrows({
   className,
 }: CarouselArrowsProps) {
   const buttonClass =
-    "flex size-11 items-center justify-center rounded-full border border-hairline text-primary transition-colors duration-200 hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent";
+    "flex size-11 items-center justify-center rounded-full border border-hairline text-primary transition-colors duration-200 hover:bg-primary/10 disabled:opacity-30 disabled:hover:bg-transparent";
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
