@@ -19,10 +19,18 @@ import { cn } from "@/lib/cn";
  * trick on the viewport div below) so neighboring slides peek all the way
  * to the edge of the screen; the heading and controls above/below it stay
  * within the normal padded container.
+ *
+ * `100vw` is defined as the viewport width *including* the scrollbar, so
+ * on a browser with a non-overlay scrollbar (most desktop browsers outside
+ * of headless testing) the full-bleed div renders a few pixels wider than
+ * the page itself and pushes a horizontal scrollbar onto the whole
+ * document. `overflow-x-hidden` on this section (not on body/html — that
+ * would risk the header's position:sticky the same way the old
+ * height:100% bug did) clips just that harmless sliver locally instead.
  */
 export function WorkCarousel() {
   return (
-    <section id="work" className="border-t border-hairline py-24">
+    <section id="work" className="overflow-x-hidden border-t border-hairline py-24">
       <div className="mx-auto max-w-(--container-page) px-4 sm:px-6 lg:px-8">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">Selected work</p>
         <h2 className="mb-16 font-display text-4xl tracking-[-0.02em] sm:text-5xl">
