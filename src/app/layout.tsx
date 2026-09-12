@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -19,12 +20,23 @@ export const metadata: Metadata = {
   title: "Elena Vance — Frontend Development, QA & Test Automation, AI Agents",
   description:
     "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
+  icons: {
+    icon: "/icon.svg",
+  },
+  openGraph: {
+    title: "Elena Vance — Frontend Development, QA & Test Automation, AI Agents",
+    description:
+      "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-primary">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-primary">
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      </body>
     </html>
   );
 }
