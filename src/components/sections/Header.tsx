@@ -29,7 +29,7 @@ export function Header() {
       <div className="mx-auto flex h-20 w-full max-w-(--container-page) items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#top" className="flex items-center gap-3 text-primary">
           <LogoMark size={28} />
-          <span className="font-display text-lg tracking-[-0.01em]">Elena Vance</span>
+          <span className="font-display text-lg tracking-[-0.01em]">Osman Zakaria</span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">

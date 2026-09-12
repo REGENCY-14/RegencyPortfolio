@@ -40,7 +40,7 @@ export function FooterCta() {
           <div className="flex flex-col gap-4">
             <Link href="#top" className="flex items-center gap-3">
               <LogoMark size={28} />
-              <span className="font-display text-lg">Elena Vance</span>
+              <span className="font-display text-lg">Osman Zakaria</span>
             </Link>
             <p className="max-w-xs text-sm text-muted">
               Frontend development, QA &amp; test automation, and AI agent building — one
@@ -77,7 +77,7 @@ export function FooterCta() {
         </div>
 
         <div className="mt-16 border-t border-hairline pt-6 text-center text-xs text-muted">
-          © {year} Elena Vance. All rights reserved.
+          © {year} Osman Zakaria. All rights reserved.
         </div>
       </div>
     </footer>
