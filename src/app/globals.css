@@ -35,10 +35,16 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
+/*
+ * No `height: 100%` on html/body here. That pattern (chained through a
+ * flex-column body) resolves to a *definite* one-viewport-tall box the
+ * moment any ancestor has a definite height, and overflowing content only
+ * paints past it visually — it doesn't grow the box. position: sticky's
+ * containing block is that box, though, so the sticky header would detach
+ * and scroll away the instant the page got taller than one screen. `body`
+ * gets `min-h-screen` (a real viewport unit, not a %-of-ancestor chain) in
+ * layout.tsx instead, which has no such ceiling.
+ */
 
 body {
   background: var(--color-background);
