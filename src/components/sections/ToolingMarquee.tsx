@@ -11,7 +11,7 @@ export function ToolingMarquee() {
         {TOOLS.map((tool) => (
           <span
             key={tool}
-            className="mx-8 font-display text-2xl italic tracking-[-0.01em] text-muted sm:text-3xl"
+            className="mx-8 font-display text-2xl tracking-[-0.01em] text-muted sm:text-3xl"
           >
             {tool}
           </span>

@@ -24,9 +24,12 @@
   --radius-card: 20px;
   --radius-card-sm: 12px;
 
-  /* fonts (wired to next/font variables in layout.tsx) */
-  --font-display: var(--font-playfair), Georgia, serif;
+  /* fonts (wired to next/font variables in layout.tsx). One typeface
+     site-wide, no serif pairing — `font-display` is kept as a utility
+     name (rather than touching every heading's className) but now just
+     mirrors `font-sans`. */
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-display: var(--font-sans);
 
   --container-page: 1280px;
 }

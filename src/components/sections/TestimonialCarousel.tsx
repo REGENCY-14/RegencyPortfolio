@@ -39,7 +39,7 @@ export function TestimonialCarousel() {
                         animate={{ opacity: index === selectedIndex ? 1 : 0, y: index === selectedIndex ? 0 : 12 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <p className="font-display text-2xl italic leading-relaxed tracking-[-0.01em] sm:text-3xl">
+                        <p className="font-display text-2xl leading-relaxed tracking-[-0.01em] sm:text-3xl">
                           &ldquo;{testimonial.quote}&rdquo;
                         </p>
                         <p className="mt-6 text-sm font-medium text-primary">{testimonial.name}</p>

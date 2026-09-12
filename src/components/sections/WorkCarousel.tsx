@@ -19,7 +19,7 @@ export function WorkCarousel() {
       <div className="mx-auto max-w-(--container-page)">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">Selected work</p>
         <h2 className="mb-16 font-display text-4xl tracking-[-0.02em] sm:text-5xl">
-          Systems I&apos;ve <em className="italic">shipped</em>.
+          Systems I&apos;ve <em className="not-italic font-bold">shipped</em>.
         </h2>
 
         <DraggableCarousel slideCount={WORK_PROJECTS.length}>
@@ -50,7 +50,7 @@ export function WorkCarousel() {
                               />
                             ) : (
                               <div className="flex size-full items-center justify-center">
-                                <span className="font-display text-3xl italic text-muted">{project.name}</span>
+                                <span className="font-display text-3xl font-bold text-muted">{project.name}</span>
                               </div>
                             )}
                           </div>

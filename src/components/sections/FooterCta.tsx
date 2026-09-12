@@ -29,7 +29,7 @@ export function FooterCta() {
           className="flex flex-col items-center gap-8 rounded-card bg-surface px-6 py-20 text-center sm:px-12"
         >
           <h2 className="max-w-2xl font-display text-4xl leading-tight tracking-[-0.02em] sm:text-5xl">
-            Let&apos;s build something that <em className="italic">holds up</em>.
+            Let&apos;s build something that <em className="not-italic font-bold">holds up</em>.
           </h2>
           <Button href={`mailto:${CONTACT_EMAIL}`} withArrow size="md">
             Get in touch
