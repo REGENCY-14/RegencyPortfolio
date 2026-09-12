@@ -4,6 +4,7 @@ import { ToolingMarquee } from "@/components/sections/ToolingMarquee";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { MissionStats } from "@/components/sections/MissionStats";
 import { WorkCarousel } from "@/components/sections/WorkCarousel";
+import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <ServicesAccordion />
         <MissionStats />
         <WorkCarousel />
+        <TestimonialCarousel />
       </main>
     </>
   );

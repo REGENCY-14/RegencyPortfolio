@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { UseEmblaCarouselType } from "embla-carousel-react";
-import type { EmblaCarouselType } from "embla-carousel";
+import type { EmblaCarouselType, EmblaPluginType } from "embla-carousel";
 import { useReducedMotionSafe } from "@/hooks/useReducedMotionSafe";
 
 export interface DraggableCarouselState {
@@ -19,6 +19,7 @@ export interface DraggableCarouselState {
 interface DraggableCarouselProps {
   slideCount: number;
   loop?: boolean;
+  plugins?: EmblaPluginType[];
   children: (state: DraggableCarouselState) => React.ReactNode;
 }
 
@@ -51,14 +52,21 @@ function useEmblaSnapshot<T>(emblaApi: EmblaCarouselType | undefined, getSnapsho
  * *autoplay* used by the testimonial carousel is what respects
  * reduced-motion, at that call site.
  */
-export function DraggableCarousel({ slideCount, loop = false, children }: DraggableCarouselProps) {
+export function DraggableCarousel({ slideCount, loop = false, plugins, children }: DraggableCarouselProps) {
   const prefersReducedMotion = useReducedMotionSafe();
-  const [viewportRef, emblaApi] = useEmblaCarousel({
-    loop,
-    align: "center",
-    skipSnaps: false,
-    duration: prefersReducedMotion ? 1 : undefined,
-  });
+  const [viewportRef, emblaApi] = useEmblaCarousel(
+    {
+      loop,
+      align: "center",
+      skipSnaps: false,
+      duration: prefersReducedMotion ? 1 : undefined,
+    },
+    // Autoplay-style plugins are opt-in per carousel; callers that pass one
+    // are expected to skip it under reduced motion themselves (see
+    // TestimonialCarousel), since only they know which plugin is "ambient
+    // looping" versus something else.
+    plugins,
+  );
 
   const selectedIndex = useEmblaSnapshot(emblaApi, (api) => api.selectedScrollSnap(), 0);
   const canScrollPrev = useEmblaSnapshot(emblaApi, (api) => api.canScrollPrev(), false);
