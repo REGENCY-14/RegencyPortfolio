@@ -25,7 +25,7 @@ export function EngagementOptions() {
       <div className="mx-auto max-w-(--container-page)">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">Ways to work together</p>
         <h2 className="mb-12 font-display text-4xl tracking-[-0.02em] sm:text-5xl">
-          Engagement <em className="italic">options</em>.
+          Engagement <em className="not-italic font-bold">options</em>.
         </h2>
 
         <div role="tablist" aria-label="Engagement options" className="mb-10 flex flex-wrap gap-2">

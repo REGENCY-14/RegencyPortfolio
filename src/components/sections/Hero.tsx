@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { useReducedMotionSafe } from "@/hooks/useReducedMotionSafe";
 import { EASE_OUT } from "@/components/motion/variants";
 
-/** Headline lines with the italicized words marked as `_word_`. */
+/** Headline lines with the emphasized words marked as `_word_`. */
 const HEADLINE_LINES = ["Interfaces engineered with", "_precision_, tested without", "_compromise_."];
 
 function HeadlineLine({ line }: { line: string }) {
@@ -15,7 +15,7 @@ function HeadlineLine({ line }: { line: string }) {
     <>
       {parts.map((part, index) =>
         part.startsWith("_") ? (
-          <em key={index} className="not-italic italic">
+          <em key={index} className="not-italic font-bold">
             {part.slice(1, -1)}
           </em>
         ) : (

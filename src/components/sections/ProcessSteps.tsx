@@ -20,7 +20,7 @@ export function ProcessSteps() {
       <div className="mx-auto max-w-(--container-page)">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">How I work</p>
         <h2 className="mb-20 font-display text-4xl tracking-[-0.02em] sm:text-5xl">
-          Three steps, <em className="italic">every</em> time.
+          Three steps, <em className="not-italic font-bold">every</em> time.
         </h2>
 
         <div className="mx-auto flex max-w-2xl flex-col gap-16 sm:gap-20">

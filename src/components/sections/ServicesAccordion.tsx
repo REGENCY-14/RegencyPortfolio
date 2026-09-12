@@ -36,7 +36,7 @@ export function ServicesAccordion() {
       <div className="mx-auto max-w-(--container-page)">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">What I do</p>
         <h2 className="mb-16 max-w-2xl font-display text-4xl leading-tight tracking-[-0.02em] sm:text-5xl">
-          Three practices, <em className="italic">one</em> engineer.
+          Three practices, <em className="not-italic font-bold">one</em> engineer.
         </h2>
 
         {/* Desktop: accordion + large cross-fading icon panel */}
