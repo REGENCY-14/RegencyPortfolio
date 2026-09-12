@@ -2,6 +2,7 @@ import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { ToolingMarquee } from "@/components/sections/ToolingMarquee";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
+import { MissionStats } from "@/components/sections/MissionStats";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <ToolingMarquee />
         <ServicesAccordion />
+        <MissionStats />
       </main>
     </>
   );
