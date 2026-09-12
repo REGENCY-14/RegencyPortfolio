@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { DraggableCarousel } from "@/components/motion/DraggableCarousel";
 import { CarouselArrows } from "@/components/ui/CarouselArrows";
+import { WorkPlaceholderGraphic } from "@/components/icons/WorkPlaceholderGraphic";
 import { WORK_PROJECTS } from "@/data/work";
 import { cn } from "@/lib/cn";
 
@@ -49,9 +50,12 @@ export function WorkCarousel() {
                                 className="object-cover"
                               />
                             ) : (
-                              <div className="flex size-full items-center justify-center">
-                                <span className="font-display text-3xl italic text-muted">{project.name}</span>
-                              </div>
+                              <>
+                                <WorkPlaceholderGraphic className="size-full" />
+                                <span className="absolute bottom-4 left-4 font-display text-2xl italic text-primary">
+                                  {project.name}
+                                </span>
+                              </>
                             )}
                           </div>
                           <h3 className="mt-6 font-display text-2xl tracking-[-0.01em]">{project.name}</h3>
