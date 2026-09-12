@@ -7,6 +7,7 @@ import { WorkCarousel } from "@/components/sections/WorkCarousel";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { EngagementOptions } from "@/components/sections/EngagementOptions";
+import { FooterCta } from "@/components/sections/FooterCta";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <ProcessSteps />
         <EngagementOptions />
       </main>
+      <FooterCta />
     </>
   );
 }
