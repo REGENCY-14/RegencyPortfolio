@@ -5,6 +5,7 @@ import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { MissionStats } from "@/components/sections/MissionStats";
 import { WorkCarousel } from "@/components/sections/WorkCarousel";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <MissionStats />
         <WorkCarousel />
         <TestimonialCarousel />
+        <ProcessSteps />
       </main>
     </>
   );
