@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { NumberedLabel } from "@/components/ui/NumberedLabel";
 import { CarouselArrows } from "@/components/ui/CarouselArrows";
+import { ArrowRight } from "@/components/icons/ArrowRight";
 import { useReducedMotionSafe } from "@/hooks/useReducedMotionSafe";
 import { SERVICES } from "@/data/services";
 import { cn } from "@/lib/cn";
@@ -77,9 +79,16 @@ export function ServicesAccordion() {
                         transition={{ type: "spring", stiffness: 220, damping: 26 }}
                         className="overflow-hidden"
                       >
-                        <p className="max-w-md pb-6 pl-[3.25rem] text-sm leading-relaxed text-muted">
-                          {service.description}
-                        </p>
+                        <div className="max-w-md pb-6 pl-[3.25rem]">
+                          <p className="text-sm leading-relaxed text-muted">{service.description}</p>
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className="group mt-3 inline-flex items-center gap-2 text-sm text-primary"
+                          >
+                            View details
+                            <ArrowRight className="transition-transform group-hover:translate-x-1" />
+                          </Link>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -129,6 +138,13 @@ export function ServicesAccordion() {
                   <span className="font-display text-xl">{service.title}</span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">{service.description}</p>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group mt-3 inline-flex items-center gap-2 text-sm text-primary"
+                >
+                  View details
+                  <ArrowRight className="transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
           ))}

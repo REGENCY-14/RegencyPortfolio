@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckIcon } from "@/components/icons/CheckIcon";
+import { ArrowRight } from "@/components/icons/ArrowRight";
 import { Button } from "@/components/ui/Button";
 import { useReducedMotionSafe } from "@/hooks/useReducedMotionSafe";
 import { ENGAGEMENTS } from "@/data/engagements";
@@ -21,7 +23,7 @@ export function EngagementOptions() {
   const active = ENGAGEMENTS.find((engagement) => engagement.id === activeId) ?? ENGAGEMENTS[0];
 
   return (
-    <section className="border-t border-hairline px-4 py-24 sm:px-6 lg:px-8">
+    <section id="engagement" className="border-t border-hairline px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-(--container-page)">
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted">Ways to work together</p>
         <h2 className="mb-12 font-display text-4xl tracking-[-0.02em] sm:text-5xl">
@@ -80,9 +82,18 @@ export function EngagementOptions() {
               ))}
             </motion.ul>
 
-            <Button href="#contact" className="mt-10" withArrow>
-              Start a conversation
-            </Button>
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <Button href="#contact" withArrow>
+                Start a conversation
+              </Button>
+              <Link
+                href={`/engagement/${active.id}`}
+                className="group inline-flex items-center gap-2 text-sm text-primary"
+              >
+                Learn more
+                <ArrowRight className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
