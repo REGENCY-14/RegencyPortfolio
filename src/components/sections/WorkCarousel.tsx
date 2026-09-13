@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { DraggableCarousel } from "@/components/motion/DraggableCarousel";
 import { CarouselArrows } from "@/components/ui/CarouselArrows";
 import { WorkPlaceholderGraphic } from "@/components/icons/WorkPlaceholderGraphic";
+import { ArrowRight } from "@/components/icons/ArrowRight";
 import { WORK_PROJECTS } from "@/data/work";
 import { cn } from "@/lib/cn";
 
@@ -93,6 +95,13 @@ export function WorkCarousel() {
                             ))}
                           </motion.div>
                         )}
+                        <Link
+                          href={`/work/${project.slug}`}
+                          className="group mt-4 inline-flex w-fit items-center gap-2 text-sm text-primary"
+                        >
+                          View case study
+                          <ArrowRight className="transition-transform group-hover:translate-x-1" />
+                        </Link>
                       </motion.div>
                     </div>
                   );
