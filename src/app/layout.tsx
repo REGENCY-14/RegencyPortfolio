@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
+import { SITE_URL } from "@/lib/site";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -10,6 +11,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Osman Zakaria: Frontend Development, QA & Test Automation, AI Agents",
   description:
     "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
@@ -22,6 +24,22 @@ export const metadata: Metadata = {
       "Personal engineering portfolio spanning frontend development, QA & test automation, and AI agent building.",
     type: "website",
   },
+};
+
+/**
+ * Person structured data for search engines. No `sameAs` entries — the
+ * social links in the footer are still placeholder domains (github.com,
+ * linkedin.com, x.com), not real profile URLs, and pointing sameAs at a
+ * generic homepage would be inaccurate structured data. Add sameAs once
+ * those are real profile links.
+ */
+const PERSON_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Osman Zakaria",
+  jobTitle: "Frontend Lead & QA Architect",
+  url: SITE_URL,
+  knowsAbout: ["Frontend Development", "QA & Test Automation", "AI Agent Building"],
 };
 
 /**
@@ -42,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }} />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-primary">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
