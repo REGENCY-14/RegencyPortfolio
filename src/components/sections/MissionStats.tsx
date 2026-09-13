@@ -1,43 +1,57 @@
+import Image from "next/image";
 import { Counter } from "@/components/ui/Counter";
 import { STATS } from "@/data/stats";
 import { cn } from "@/lib/cn";
 
+interface CollagePhoto {
+  src: string;
+  alt: string;
+  rotate: string;
+  offset: string;
+  className: string;
+}
+
 /**
- * Three small overlapping "window" panels standing in for the reference's
- * photo collage. No real photography exists for this rebuild, and
- * fabricating a fake photo of a person would misrepresent the site — these
- * abstract browser/editor mockups keep the collage's layout rhythm without
- * inventing a person who doesn't exist in any provided asset.
+ * Two overlapping real photos standing in for the reference's photo
+ * collage. Generic workspace/craft imagery — not a photo of a specific
+ * person, since no real photo exists for this rebuild and fabricating one
+ * would misrepresent the site. Same grayscale + amber duotone treatment as
+ * the services accordion's photography, so both sections read as one
+ * consistent system despite the source photos having different native
+ * color casts.
  */
 function WorkCollage() {
-  const panels = [
-    { rotate: "-rotate-6", offset: "translate-y-4", accent: "bg-accent-glow/70" },
-    { rotate: "rotate-3", offset: "-translate-y-2 translate-x-6", accent: "bg-primary/40" },
-    { rotate: "-rotate-2", offset: "translate-y-10 translate-x-2", accent: "bg-muted/50" },
+  const photos: CollagePhoto[] = [
+    {
+      src: "/images/mission/desk.jpg",
+      alt: "A considered, minimal workspace setup",
+      rotate: "-rotate-6",
+      offset: "translate-y-4",
+      className: "z-0",
+    },
+    {
+      src: "/images/mission/hands-keyboard.jpg",
+      alt: "Close-up of hands typing",
+      rotate: "rotate-3",
+      offset: "-translate-y-2 translate-x-6",
+      className: "z-10",
+    },
   ];
 
   return (
     <div className="relative mx-auto h-64 w-full max-w-xs sm:max-w-sm">
-      {panels.map((panel, index) => (
+      {photos.map((photo) => (
         <div
-          key={index}
+          key={photo.src}
           className={cn(
-            "absolute inset-x-6 top-0 h-40 rounded-card-sm border border-hairline bg-surface p-3 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]",
-            panel.rotate,
-            panel.offset,
+            "absolute inset-x-6 top-0 h-40 overflow-hidden rounded-card-sm border border-hairline shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]",
+            photo.rotate,
+            photo.offset,
+            photo.className,
           )}
-          style={{ zIndex: index }}
         >
-          <div className="mb-3 flex gap-1.5">
-            <span className="size-2 rounded-full bg-hairline" />
-            <span className="size-2 rounded-full bg-hairline" />
-            <span className="size-2 rounded-full bg-hairline" />
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <span className={cn("h-1.5 w-3/4 rounded-full", panel.accent)} />
-            <span className="h-1.5 w-1/2 rounded-full bg-hairline" />
-            <span className="h-1.5 w-2/3 rounded-full bg-hairline" />
-          </div>
+          <Image src={photo.src} alt={photo.alt} fill sizes="320px" className="object-cover grayscale contrast-125" />
+          <div className="absolute inset-0 bg-accent-glow/25 mix-blend-color" aria-hidden />
         </div>
       ))}
     </div>
