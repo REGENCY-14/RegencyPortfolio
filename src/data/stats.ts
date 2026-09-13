@@ -6,6 +6,6 @@ export interface Stat {
 
 export const STATS: Stat[] = [
   { value: 12400, suffix: "+", label: "Test cases automated" },
-  { value: 30, suffix: "+", label: "Projects shipped" },
-  { value: 8, suffix: "", label: "Years across QA & frontend" },
+  { value: 3, suffix: "", label: "Projects shipped" },
+  { value: 4, suffix: "+", label: "Years across QA & frontend" },
 ];
