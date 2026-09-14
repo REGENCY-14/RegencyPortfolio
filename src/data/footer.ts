@@ -20,7 +20,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { label: "GitHub", href: "https://github.com", icon: GithubIcon },
   { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedinIcon },
   { label: "X (Twitter)", href: "https://x.com", icon: X },
-  { label: "Email", href: "mailto:hello@osmanzakaria.dev", icon: Mail },
+  { label: "Email", href: "mailto:osmantimtonizakaria14@gmail.com", icon: Mail },
 ];
 
 export const FOOTER_NAV = [
@@ -30,4 +30,4 @@ export const FOOTER_NAV = [
   { label: "Hire Me", href: "#contact" },
 ];
 
-export const CONTACT_EMAIL = "hello@osmanzakaria.dev";
+export const CONTACT_EMAIL = "osmantimtonizakaria14@gmail.com";
