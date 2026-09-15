@@ -59,4 +59,20 @@ export const WORK_PROJECTS: WorkProject[] = [
       "Optimized for fast first paint given the site's image-heavy, editorial-style hero sections",
     ],
   },
+  {
+    slug: "biizz",
+    name: "Biizz",
+    tags: ["QA", "Manual Testing", "E-Commerce"],
+    image: "/images/work/biizz.jpg",
+    role: "QA Engineer",
+    summary: "An AI-assisted storefront platform for early-stage merchants across West and East Africa.",
+    overview:
+      "Biizz lets merchants in Ghana, Nigeria, and Kenya launch an online store in minutes, with an AI agent that answers customer questions and collects payment straight in WhatsApp. I performed manual testing across the storefront, dashboard, and payment flows, catching the issues that automated coverage alone would have missed before real money and real merchants were on the line.",
+    highlights: [
+      "Manually tested storefront setup, order management, and multi-store dashboard flows",
+      "Verified Paystack and Junipay payment integrations across success, failure, and edge-case paths",
+      "Tested the WhatsApp AI agent's product recommendations and in-chat payment collection",
+      "Filed and tracked defects through resolution ahead of releases to live merchants",
+    ],
+  },
 ];
