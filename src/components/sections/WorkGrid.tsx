@@ -20,6 +20,13 @@ import { fadeUp, staggerContainer, viewportOnce } from "@/components/motion/vari
  * multi-device mockup), and cropping to fill a fixed box zoomed in hard on
  * the wider ones (see the carousel's own object-contain fix before this
  * rewrite). Contain keeps every screenshot fully visible instead.
+ *
+ * Each card is a single bordered container (image, tag, title, summary, and
+ * the role/case-study footer all inside one box) rather than loose content
+ * stacked in a grid cell — with generous inter-card gaps on top of that. At
+ * a glance, or on a resize where a wrapped line might otherwise land next
+ * to the wrong neighbor, there's no ambiguity about which project a given
+ * line of text belongs to.
  */
 export function WorkGrid() {
   return (
@@ -35,13 +42,17 @@ export function WorkGrid() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer(0.12)}
-          className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2"
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2"
         >
           {WORK_PROJECTS.map((project) => (
-            <motion.article key={project.slug} variants={fadeUp} className="flex flex-col">
+            <motion.article
+              key={project.slug}
+              variants={fadeUp}
+              className="flex flex-col rounded-card border border-hairline bg-background p-5 transition-colors duration-200 hover:border-primary/30 sm:p-6"
+            >
               <Link
                 href={`/work/${project.slug}`}
-                className="relative aspect-[16/10] w-full overflow-hidden rounded-card bg-surface"
+                className="relative aspect-[16/10] w-full overflow-hidden rounded-card-sm bg-surface"
               >
                 {project.image ? (
                   <Image
