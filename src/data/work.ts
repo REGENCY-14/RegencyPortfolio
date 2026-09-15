@@ -8,6 +8,9 @@ export interface WorkProject {
   summary: string;
   overview: string;
   highlights: string[];
+  /** Live URL, when the project is publicly reachable — rendered as a
+   * "Visit live site" link on the project's detail page. */
+  liveUrl?: string;
 }
 
 export const WORK_PROJECTS: WorkProject[] = [
@@ -16,6 +19,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     name: "AUREX",
     tags: ["Frontend Architecture", "Dataviz", "Next.js"],
     image: "/images/work/aurex.jpg",
+    liveUrl: "https://aurex-six-chi.vercel.app/",
     role: "Frontend Architect",
     summary: "A private investment platform with sub-50ms portfolio dataviz for wealth-management clients.",
     overview:
@@ -32,6 +36,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     name: "MUKALIM",
     tags: ["Full-Stack", "E-Commerce", "Inventory"],
     image: "/images/work/mukalim.jpg",
+    liveUrl: "https://mukalim-v2.vercel.app/",
     role: "Full-Stack Engineer",
     summary: "A headless artisan-commerce storefront with real-time inventory sync.",
     overview:
@@ -48,6 +53,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     name: "Bismuth",
     tags: ["Frontend Development", "Next.js", "Marketing Site"],
     image: "/images/work/bismuth.jpg",
+    liveUrl: "https://www.bismuthinc.com/",
     role: "Frontend Developer",
     summary: "A market-entry consultancy site connecting global businesses with Africa's emerging markets.",
     overview:
@@ -64,6 +70,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     name: "Biizz",
     tags: ["QA", "Manual Testing", "E-Commerce"],
     image: "/images/work/biizz.jpg",
+    liveUrl: "https://biizz.app/",
     role: "QA Engineer",
     summary: "An AI-assisted storefront platform for early-stage merchants across West and East Africa.",
     overview:

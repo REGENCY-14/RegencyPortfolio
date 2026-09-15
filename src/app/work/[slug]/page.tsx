@@ -44,6 +44,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
           image={project.image}
           imageAlt={`${project.name} project screenshot`}
           fallback={<WorkPlaceholderGraphic className="size-full" />}
+          liveUrl={project.liveUrl}
         />
 
         <section className="px-4 pb-24 sm:px-6 lg:px-8">
