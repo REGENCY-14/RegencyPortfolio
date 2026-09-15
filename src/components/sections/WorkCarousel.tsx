@@ -64,7 +64,7 @@ export function WorkCarousel() {
                               alt={`${project.name} project screenshot`}
                               fill
                               sizes="(min-width: 1024px) 55vw, 85vw"
-                              className="object-cover"
+                              className="object-contain"
                             />
                           ) : (
                             <>
