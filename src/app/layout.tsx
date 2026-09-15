@@ -26,19 +26,15 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Person structured data for search engines. No `sameAs` entries — the
- * social links in the footer are still placeholder domains (github.com,
- * linkedin.com, x.com), not real profile URLs, and pointing sameAs at a
- * generic homepage would be inaccurate structured data. Add sameAs once
- * those are real profile links.
- */
+/** Person structured data for search engines. `sameAs` links to the real
+ * GitHub and LinkedIn profiles in the footer (src/data/footer.ts). */
 const PERSON_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Osman Zakaria",
   jobTitle: "Frontend Lead & QA Architect",
   url: SITE_URL,
+  sameAs: ["https://github.com/REGENCY-14/", "https://www.linkedin.com/in/osman-zakaria-6577b4247"],
   knowsAbout: ["Frontend Development", "QA & Test Automation", "AI Agent Building"],
 };
 
