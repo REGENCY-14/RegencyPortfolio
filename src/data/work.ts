@@ -12,22 +12,6 @@ export interface WorkProject {
 
 export const WORK_PROJECTS: WorkProject[] = [
   {
-    slug: "auts",
-    name: "AUTS",
-    tags: ["QA Leadership", "Playwright", "CI/CD"],
-    image: "/images/work/auts.png",
-    role: "QA Lead & Automation Architect",
-    summary: "A distributed end-to-end testing platform for a multi-tenant SaaS product.",
-    overview:
-      "AUTS needed a testing strategy that could keep pace with a multi-tenant platform shipping several times a day. I designed and built AuraCI, a distributed Playwright testing matrix with its own automated dashboard, so every pipeline run gave the team a clear, trustworthy signal instead of a wall of flaky red X's.",
-    highlights: [
-      "Reduced pipeline regression latency by 68% across multi-tenant services",
-      "Built AuraCI, a real-time dashboard surfacing pass/fail trends, flake rate, and worker utilization",
-      "Isolated hermetic per-tenant test environments to eliminate cross-tenant test pollution",
-      "Cut median CI run time from hours to minutes without sacrificing coverage",
-    ],
-  },
-  {
     slug: "aurex",
     name: "AUREX",
     tags: ["Frontend Architecture", "Dataviz", "Next.js"],
