@@ -31,12 +31,12 @@ const EDGES: [number, number][] = [
 ];
 
 /**
- * Fills the image slot for a Selected Work project with no real screenshot
- * asset (Biltlinx) — a node-graph/workflow visual in the site's own dark +
- * amber palette, rather than a stock photo. Real stock photography either
- * turned out to be someone else's actual code (wrong to present as this
- * site's project) or clashed with the palette, so this stays hand-drawn and
- * on-brand instead, in the same spirit as the site's other custom graphics.
+ * Fallback image slot for a Selected Work project with no real screenshot
+ * asset yet — a node-graph/workflow visual in the site's own dark + amber
+ * palette, rather than a stock photo. Every current project has a real
+ * screenshot, so this isn't rendered today, but stays as the on-brand
+ * fallback (hand-drawn, matching the site's other custom graphics) for
+ * whenever the next project doesn't have one.
  */
 export function WorkPlaceholderGraphic({ className }: { className?: string }) {
   const prefersReducedMotion = useReducedMotionSafe();
