@@ -17,7 +17,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     tags: ["Frontend Architecture", "Dataviz", "Next.js"],
     image: "/images/work/aurex.jpg",
     role: "Frontend Architect",
-    summary: "A private investment platform with sub-50ms portfolio dataviz.",
+    summary: "A private investment platform with sub-50ms portfolio dataviz for wealth-management clients.",
     overview:
       "AUREX is an exclusive investment platform where sophisticated investors track capital in real time. My job was the frontend architecture: a Next.js application fast enough that portfolio telemetry feels instantaneous, with bespoke dataviz components built for a wealth-management audience rather than skinned off a generic charting library.",
     highlights: [
