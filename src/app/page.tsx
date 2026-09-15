@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { ToolingMarquee } from "@/components/sections/ToolingMarquee";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { MissionStats } from "@/components/sections/MissionStats";
-import { WorkCarousel } from "@/components/sections/WorkCarousel";
+import { WorkGrid } from "@/components/sections/WorkGrid";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { EngagementOptions } from "@/components/sections/EngagementOptions";
@@ -19,7 +19,7 @@ export default function Home() {
         <ToolingMarquee />
         <ServicesAccordion />
         <MissionStats />
-        <WorkCarousel />
+        <WorkGrid />
         <TestimonialCarousel />
         <ProcessSteps />
         <EngagementOptions />

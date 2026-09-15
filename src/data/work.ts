@@ -2,7 +2,7 @@ export interface WorkProject {
   slug: string;
   name: string;
   tags: string[];
-  /** Omitted for projects with no existing screenshot asset (see WorkCarousel). */
+  /** Omitted for projects with no existing screenshot asset (see WorkGrid). */
   image?: string;
   role: string;
   summary: string;
