@@ -5,7 +5,10 @@ import { SERVICES } from "@/data/services";
 import { ENGAGEMENTS } from "@/data/engagements";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const home: MetadataRoute.Sitemap = [{ url: SITE_URL, changeFrequency: "monthly", priority: 1 }];
+  const home: MetadataRoute.Sitemap = [
+    { url: SITE_URL, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/resume`, changeFrequency: "monthly", priority: 0.8 },
+  ];
 
   const workRoutes: MetadataRoute.Sitemap = WORK_PROJECTS.map((project) => ({
     url: `${SITE_URL}/work/${project.slug}`,
