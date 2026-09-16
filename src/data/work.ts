@@ -21,7 +21,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     image: "/images/work/aurex.jpg",
     liveUrl: "https://aurex-six-chi.vercel.app/",
     role: "Frontend Architect, QA & Product Owner",
-    summary: "A private investment platform with sub-50ms portfolio dataviz for wealth-management clients.",
+    summary: "A private investment platform giving wealth-management clients real-time visibility into their portfolios.",
     overview:
       "AUREX is an exclusive investment platform where sophisticated investors track capital in real time. My job was the frontend architecture: a Next.js application fast enough that portfolio telemetry feels instantaneous, with bespoke dataviz components built for a wealth-management audience rather than skinned off a generic charting library. I also manually tested the build myself before release, since a dataviz bug is exactly the kind of thing that erodes trust with investors fast.",
     highlights: [
