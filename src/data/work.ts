@@ -26,7 +26,7 @@ export const WORK_PROJECTS: WorkProject[] = [
       "AUREX is an exclusive investment platform where sophisticated investors track capital in real time. My job was the frontend architecture: a Next.js application fast enough that portfolio telemetry feels instantaneous, with bespoke dataviz components built for a wealth-management audience rather than skinned off a generic charting library. I also manually tested the build myself before release, since a dataviz bug is exactly the kind of thing that erodes trust with investors fast.",
     highlights: [
       "Architected the Next.js frontend from the ground up, including the design system",
-      "Built custom portfolio/leaderboard dataviz components tuned for sub-50ms render cycles",
+      "Built custom portfolio/leaderboard dataviz components tuned to stay smooth under live data",
       "Delivered a responsive investor dashboard spanning tablet and mobile alongside desktop",
       "Worked directly with design to keep the editorial, gold-accented brand consistent end to end",
       "Manually tested the dashboard, dataviz components, and responsive breakpoints before release",
