@@ -20,7 +20,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     tags: ["Frontend Architecture", "Dataviz", "Next.js"],
     image: "/images/work/aurex.jpg",
     liveUrl: "https://aurex-six-chi.vercel.app/",
-    role: "Frontend Architect",
+    role: "Frontend Architect, QA & Product Owner",
     summary: "A private investment platform with sub-50ms portfolio dataviz for wealth-management clients.",
     overview:
       "AUREX is an exclusive investment platform where sophisticated investors track capital in real time. My job was the frontend architecture: a Next.js application fast enough that portfolio telemetry feels instantaneous, with bespoke dataviz components built for a wealth-management audience rather than skinned off a generic charting library. I also manually tested the build myself before release, since a dataviz bug is exactly the kind of thing that erodes trust with investors fast.",
@@ -38,7 +38,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     tags: ["Full-Stack", "E-Commerce", "Inventory"],
     image: "/images/work/mukalim.jpg",
     liveUrl: "https://mukalim-v2.vercel.app/",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Engineer & QA",
     summary: "A headless artisan-commerce storefront with real-time inventory sync.",
     overview:
       "MUKALIM sells globally-sourced spices and artisan goods, and needed a storefront and inventory console that could stay in sync as stock moved across warehouses. I built a headless commerce frontend alongside a real-time inventory management console, so the storefront never oversells and the ops team never has to guess. I also manually tested the checkout and inventory-sync paths myself, since a sync bug here means a customer paying for stock that's already gone.",
@@ -56,7 +56,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     tags: ["Frontend Development", "Next.js", "Marketing Site"],
     image: "/images/work/bismuth.jpg",
     liveUrl: "https://www.bismuthinc.com/",
-    role: "Frontend Developer",
+    role: "Frontend Developer & QA",
     summary: "A market-entry consultancy site connecting global businesses with Africa's emerging markets.",
     overview:
       "Bismuth helps international businesses enter Africa's fastest-growing markets, backed by consultants from firms and schools like Harvard, Stanford, Google, and Goldman Sachs. My job was the frontend: a fast, credible marketing site built to convert visitors into booked consultations, not just look good in a pitch deck. I manually tested the site across devices myself before launch, since a broken booking flow on a consultancy site is a lost client, not just a bug.",
