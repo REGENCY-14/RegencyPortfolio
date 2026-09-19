@@ -34,7 +34,7 @@ export function Header() {
         className="absolute inset-0 border-b border-hairline bg-background/85 backdrop-blur-md"
       />
       <div className="relative mx-auto flex h-20 w-full max-w-(--container-page) items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="#top" className="flex items-center gap-3 text-primary">
+        <Link href="/#top" className="flex items-center gap-3 text-primary">
           <LogoMark size={28} />
           <span className="font-display text-lg tracking-[-0.01em]">Osman Zakaria</span>
         </Link>

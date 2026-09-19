@@ -38,7 +38,7 @@ export function FooterCta() {
 
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-3">
           <div className="flex flex-col gap-4">
-            <Link href="#top" className="flex items-center gap-3">
+            <Link href="/#top" className="flex items-center gap-3">
               <LogoMark size={28} />
               <span className="font-display text-lg">Osman Zakaria</span>
             </Link>
