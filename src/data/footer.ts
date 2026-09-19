@@ -23,11 +23,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { label: "Email", href: "mailto:osmantimtonizakaria14@gmail.com", icon: Mail },
 ];
 
+/** "/" prefix on each anchor: FooterCta renders on every route, so a bare
+ * "#top" only scrolls within the current page instead of navigating home
+ * first — see the matching note on NAV_LINKS in data/nav.ts. */
 export const FOOTER_NAV = [
-  { label: "Home", href: "#top" },
-  { label: "Journey", href: "#mission" },
-  { label: "Projects", href: "#work" },
-  { label: "Hire Me", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Journey", href: "/#mission" },
+  { label: "Projects", href: "/#work" },
+  { label: "Hire Me", href: "/#contact" },
 ];
 
 export const CONTACT_EMAIL = "osmantimtonizakaria14@gmail.com";

@@ -12,11 +12,18 @@ export interface NavLink {
  *
  * "Resume" is the one entry that's a real route (/resume) rather than a
  * same-page anchor, since it's a dedicated page, not a section of Home.
+ *
+ * The anchors are prefixed with "/" (e.g. "/#top" not "#top") because the
+ * header rendering these links is shared across every route, not just Home
+ * — a bare "#top" only scrolls within the current page, so clicking it
+ * from /resume or /work/[slug] did nothing. "/#top" navigates to Home
+ * first when needed, then scrolls, and still works as a same-page jump
+ * when already on Home.
  */
 export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "#top" },
-  { label: "Journey", href: "#mission" },
-  { label: "Projects", href: "#work" },
+  { label: "Home", href: "/#top" },
+  { label: "Journey", href: "/#mission" },
+  { label: "Projects", href: "/#work" },
   { label: "Resume", href: "/resume" },
-  { label: "Hire Me", href: "#contact" },
+  { label: "Hire Me", href: "/#contact" },
 ];
